@@ -1,0 +1,6 @@
+<div style="padding: 16px;">
+    <h3>Shipping costs</h3>
+    <div *ngFor = "let cost of shippingCosts | async">
+        <p>{{cost.price}}</p>
+    </div>
+</div>

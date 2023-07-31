@@ -1,0 +1,14 @@
+<h3 style="padding: 16px;">Product Details</h3>
+
+<div *ngIf="product" class="product-details">
+  <div>
+    <p>{{product.name}}</p>
+    <p>{{product.description}}</p>
+    <b>{{product.price | currency:'TZS '}}</b>
+  </div>
+  <button class="btn" *ngIf="!thisIsInTheCart()" (click)="addToCart(product)">
+    Add to cart
+  </button>
+  <button class="btn danger" *ngIf="thisIsInTheCart()" (click)="removeProductFromCart(product.id)">Remove from cart</button>
+
+</div>

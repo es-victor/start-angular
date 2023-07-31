@@ -1,1 +1,108 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+}
+.nav-bar{
+    display: flex;
+    padding: 16px;  
+    background-color: #ccc;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer{
+    margin-top: auto;
+    padding: 16px;  
+    background-color: #ccc;
+}
+.products{
+    padding: 16px;
+}
+.product-card{
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.py-2{
+    padding: 16px 0;
+}
+.p-2{
+    padding: 16px;
+}
+px-2{
+    padding:0 16px;
+}
+
+.cart-card{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ccc;
+}
+
+.link-logo{
+    text-decoration: none; 
+}
+.btn{
+    cursor: pointer;
+    padding: 8px 16px;
+    border: none;
+    background-color: rgb(32, 61, 148);
+    text-decoration: none;
+    color: white;
+    margin: 0 2px;
+}
+.product-details{
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}   
+.danger{
+    background-color: red;
+}
+.default{
+    background-color: grey;
+}
+.success{
+    background-color: green;
+}
+.payment-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 16px auto;
+}
+.payment-form input,option,select{
+    height: 36px;
+    font-size: 14px;
+    margin: 4px 0;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    padding: 0 8px;
+}
+.payment-form label{
+    margin-top: 8px;
+}
+button[type=submit]{
+    margin-top: 16px;
+}

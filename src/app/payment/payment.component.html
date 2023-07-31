@@ -1,0 +1,19 @@
+<div class="p-2">
+    <div>
+        <h3>Payment</h3>
+    </div>
+    <div>
+        <form class="payment-form" [formGroup]="checkoutForm"
+            (ngSubmit)="onSubmit()">
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email">
+            <label for="roleId">Role</label>
+            <select formControlName="roleId">
+                <option *ngFor="let role of roles" [ngValue]="role.id">{{role.title}}</option>
+            </select>
+            <button class="btn" type="submit">Submit Details</button>
+        </form>
+    </div>
+</div>

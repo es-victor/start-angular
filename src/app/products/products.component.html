@@ -1,0 +1,23 @@
+<div class="container products">
+    <div style="padding: 16px 0px;">
+        <h3>All products</h3>
+    </div>
+    <div *ngFor="let product of product_list" class="product-card">
+        <div>
+            <h4 [title]="product.name"  [routerLink] = "['/products',product.id]">{{product.name}}</h4>
+            <p>Price: {{product.price | currency}}</p>
+            <p *ngIf="product.description">Description: {{product.description}}</p>
+            <button (click)="share(product.name)">Share</button>
+            <div>
+                <app-product-notify [product]="product" (notify)="onNotify(product)"></app-product-notify>
+            </div>  
+        </div>
+        
+        <div>
+            <button class="btn" *ngIf="!thisIsInTheCart(product)" (click)="addToCart(product)">
+                Add to cart
+              </button>
+              <button class="btn danger" *ngIf="thisIsInTheCart(product)" (click)="removeProductFromCart(product.id)">Remove from cart</button>            
+        </div>
+    </div>
+</div>

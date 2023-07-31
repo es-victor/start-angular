@@ -1,0 +1,27 @@
+<div class="container cart p-2" *ngIf="cartProducts">
+    <div style="display: flex;justify-content: space-between;align-items: center; padding: 8px 0;">
+        <h3>Cart</h3>
+        <div *ngIf="cartProducts.length > 0" >
+            <span>Total Cost: </span><span><b>{{totalPrice() | currency:"TZS "}} </b></span>
+            <button class="btn success" routerLink="/payment">Pay</button>
+        </div>
+        
+    </div>
+    <div *ngFor="let product of cartProducts" class="cart-card" style="display: flex;">
+       <div>
+        <p>{{product.name}} </p>
+        <p>{{product.price | currency: "TZS "}}</p>
+       </div>
+       <div>
+        <span><b>{{totalProductPrice(product) | currency:"TZS "}}</b></span>
+        <button class="btn default" (click)="reduceQuantity(product.id)">-</button>
+        <span>{{productQuantity(product.id)}}</span>
+        <button class="btn default" (click)="increaseQuantity(product.id)">+</button>
+        <button class="btn danger" (click)="removeProductFromCart(product.id)">Remove</button>
+       </div>
+    </div>
+    <!-- <button (click)="clearCart()">Clear Cart</button> -->
+    <div style="padding: 8px 0;">
+        <a routerLink = "/shipping">* Shopping costs</a>
+    </div>
+</div>
